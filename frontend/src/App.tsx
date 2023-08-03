@@ -5,6 +5,7 @@ interface IProps {
 
 }
 
+
 const App: FC<IProps> = () => {
     const [users, setUsers] = useState<{id:number, name:string, email:string, avatar:string}[]>([]);
 
