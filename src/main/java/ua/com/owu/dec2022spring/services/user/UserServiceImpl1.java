@@ -46,7 +46,7 @@ public class UserServiceImpl1 implements UserService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("customHeader", "custom value");
         List<UserDTO> collect = userDAO.findAll()
-                .stream().map(user -> new UserDTO(user.getName())).collect(Collectors.toList());
+                .stream().map(user -> new UserDTO(user.getId(), user.getName(), user.getEmail(), user.getAvatar())).collect(Collectors.toList());
 
         return new ResponseEntity<>(collect, httpHeaders, HttpStatus.ACCEPTED);
     }
